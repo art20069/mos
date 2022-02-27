@@ -13,6 +13,7 @@ func main() {
 	router.Static("/images", "./uploaded/images")
 
 	api.Setup(router)
+	// api.CORSMiddleware()
 	// router.Run(":8081")
 
 	// In case of running on Heroku
