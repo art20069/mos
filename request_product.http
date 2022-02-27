@@ -1,14 +1,23 @@
 
 ### Get Product 
-GET http://localhost:8080/api/v2/product HTTP/1.1
+GET https://localhost:8080/api/v2/product HTTP/1.1
+### Herokuapp
+GET https://mos2022.herokuapp.com/api/v2/product HTTP/1.1
+
 
 
 ### Get Product with Token
 GET http://localhost:8080/api/v2/product HTTP/1.1
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDA2NTI5NTYsImlkIjoyLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.DtJmRRhTmcGHjWiwoMjnuppEZFj-hFUT-UF8Bk_3lSI
+### Herokuapp
+GET https://mos2022.herokuapp.com/api/v2/product HTTP/1.1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2MDA2NTI5NTYsImlkIjoyLCJsZXZlbCI6Im5vcm1hbCIsInVzZXJuYW1lIjoiYWRtaW4ifQ.DtJmRRhTmcGHjWiwoMjnuppEZFj-hFUT-UF8Bk_3lSI
+
 
 ### Get Product with keyword
 GET http://localhost:8080/api/v2/product?keyword=Ar HTTP/1.1
+### Herokuapp
+GET https://mos2022.herokuapp.com/api/v2/product?keyword=Ar HTTP/1.1
 
 
 ### Get Product by ID 
