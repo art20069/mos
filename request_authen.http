@@ -31,11 +31,22 @@ Content-Type: application/json
 GET http://localhost:8080/api/v2/users?keyword=
 Content-Type: application/json
 
-### Login https://cmgostock.herokuapp.com/
-POST https://cmgostock.herokuapp.com/api/v2/login HTTP/1.1
+### Register user
+POST http://localhost:8080/api/v2/register HTTP/1.1
 Content-Type: application/json
 
 {
-    "username": "cm2",
+    "name": "artart",
+    "surname": "artart",
+    "username": "art555",
+    "password" : "1234"
+}
+
+### Login https://cmgostock.herokuapp.com/
+POST http://localhost:8080/api/v2/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "art555",
     "password" : "1234"
 }

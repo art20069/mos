@@ -10,6 +10,7 @@ import (
 func Setup(router *gin.Engine) {
 
 	db.SetupDB()
+	SetupLottoAPI(router)
 	SetupAuthenAPI(router)
 	SetupProductAPI(router)
 	SetupTransactionAPI(router)
