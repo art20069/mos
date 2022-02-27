@@ -1,6 +1,7 @@
 package api
 
 import (
+	"fmt"
 	"main/db"
 	"main/interceptor"
 	"main/model"
@@ -16,6 +17,7 @@ func SetupAuthenAPI(router *gin.Engine) {
 	{
 		authenAPI.POST("/login", login)
 		authenAPI.POST("/register", register)
+		authenAPI.GET("/users", getUsers)
 	}
 }
 
@@ -51,6 +53,20 @@ func register(c *gin.Context) {
 	} else {
 		c.JSON(401, gin.H{"status": "unable to bind data"})
 	}
+}
+
+func getUsers(c *gin.Context) {
+	var users []model.User
+
+	keyword := c.Query("keyword")
+	if keyword != "" {
+		keyword = fmt.Sprintf("%%%s%%", keyword)
+		db.GetDB().Where("name like ?", keyword).Find(&users)
+	} else {
+		db.GetDB().Find(&users)
+	}
+	c.JSON(200, users)
+
 }
 
 func checkPasswordHash(password, hash string) bool {
